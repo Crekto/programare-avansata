@@ -1,4 +1,4 @@
-#Pavel Petronel 2A3
+# Pavel Petronel 2A3  
 Write a Java application that implements the following operations:
 <ul>
     <li>Display on the screen the message "Hello World!". Run the application. If it works, go to step 2 :)</li>
