@@ -29,7 +29,7 @@ public class Main {
         }
 
         for (int i = 2; i < args.length; i++) {
-            if (args[i].length() > 1 || Character.isLetter(args[i].charAt(0)) == false) {
+            if (args[i].length() > 1 || !Character.isLetter(args[i].charAt(0))) {
                 System.err.println("The given Alphabet doesn't contain letters only");
                 System.exit(0);
             }
@@ -38,7 +38,7 @@ public class Main {
         /* Generating words */
         String[] words = new String[n];
         for (int i = 0; i < n; i++) {
-            StringBuffer aux = new StringBuffer();
+            StringBuilder aux = new StringBuilder();
             for (int j = 0; j < p; j++) {
                 aux.append(args[(int) Math.floor(Math.random() * (args.length - 1 - 2 + 1) + 2)]); //Math.floor(Math.random()*(max-min+1)+min)
             }
@@ -65,10 +65,9 @@ public class Main {
         /* Creating a data structure that stores the neighbors of each word */
         Neighbors[] storeNeighbors = new Neighbors[n];
         for (int i = 0; i < n; i++) {
-            List<String> auxNeighbors = new ArrayList<String>();
-            int noOfNeighbors = 0;
+            List<String> auxNeighbors = new ArrayList<>();
             for (int j = 0; j < n; j++) {
-                if (i != j && neighborAdjacency[i][j] == true) auxNeighbors.add(words[j]);
+                if (i != j && neighborAdjacency[i][j]) auxNeighbors.add(words[j]);
             }
             storeNeighbors[i] = new Neighbors(words[i], auxNeighbors);
         }
@@ -77,20 +76,19 @@ public class Main {
 
         /* Displaying the data structure or running time in nanoseconds for larger n */
         if (n < 1000) {
-            System.out.println("--==| Data structure that stores the neighobrs of each word |==--\n");
+            System.out.println("--==| Data structure that stores the neighbors of each word |==--\n");
             for (int i = 0; i < n; i++) {
                 System.out.println("Word = " + storeNeighbors[i].getParent() + "     Neighbors = " + storeNeighbors[i].getNeighbors());
             }
         } else {
             System.out.println("Execution time: " + (endTime - startTime) + " nanoseconds");
         }
-
-
+        
     }
 
     public static boolean checkNeighbor(String s1, String s2) {
         for (int i = 0; i < s1.length(); i++) {
-            if (s1.contains(String.valueOf(s2.charAt(i))) == true) return true;
+            if (s1.contains(String.valueOf(s2.charAt(i)))) return true;
         }
         return false;
     }
@@ -98,7 +96,7 @@ public class Main {
 
 class Neighbors {
     private final String parent;
-    private List<String> neighbors = new ArrayList<String>();
+    private final List<String> neighbors;
 
     public Neighbors(String parent, List<String> neighbors) {
         this.parent = parent;
