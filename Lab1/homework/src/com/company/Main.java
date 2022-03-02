@@ -76,16 +76,14 @@ public class Main {
         long endTime = System.nanoTime();
 
         /* Displaying the data structure or running time in nanoseconds for larger n */
-        if(n < 1000){
+        if (n < 1000) {
             System.out.println("--==| Data structure that stores the neighobrs of each word |==--\n");
             for (int i = 0; i < n; i++) {
                 System.out.println("Word = " + storeNeighbors[i].getParent() + "     Neighbors = " + storeNeighbors[i].getNeighbors());
             }
+        } else {
+            System.out.println("Execution time: " + (endTime - startTime) + " nanoseconds");
         }
-        else{
-            System.out.println("Execution time: " + (endTime-startTime) + " nanoseconds");
-        }
-
 
 
     }
