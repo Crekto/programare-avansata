@@ -1,4 +1,5 @@
-#Pavel Petronel 2A3
+# Pavel Petronel 2A3
+
 <ul>
 <li> Let <i>n, p</i> be two integers and C<sub>1</sub>,...,C<sub>m</sub> a set of letters (<i>the alphabet</i>), all given as a command line arguments. Validate the arguments!
 </li><li> Create an array of <i>n</i> strings (called <i>words</i>), each word containing exactly <i>p</i> characters from the given alphabet. <br> 
