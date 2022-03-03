@@ -8,5 +8,5 @@ Can you find the largest possible k? <br>
 
 <hr>
 
-- Deoarece cerințe ne cere de fapt să găsim un ciclu în graful format din cuvintele generate și relația de vecinătate dintre ele, am folosit un DFS pentru a determina acest ciclu.
+- Deoarece cerința ne cere de fapt să găsim un ciclu în graful format din cuvintele generate și relația de vecinătate dintre ele, am folosit un algoritm DFS pentru a determina acest ciclu.
 - Nu am reușit să implementez astfel încât să găsim cel mai mare ciclu.
