@@ -1,5 +1,5 @@
 package com.company.enums;
 
 public enum Type {
-    lab, lectureHall
+    LAB, LECTURE_HALL
 }
