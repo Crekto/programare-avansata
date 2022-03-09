@@ -25,5 +25,6 @@ and generate the class documentation using <a href="https://docs.oracle.com/java
 	- Am ordonat încăperile descrescător după capacitatea acestora
 	- Am ordonat evenimentele crescător după ora lor de terminare, și descrescător după dimensiunea acestora
 		- Am făcut acest lucru pentru a nu ajunge în situația în care, de exemplu, avem 2 evenimente care încep la aceeași oră, unul cu o dimensiune de 30 de persoane și altul cu 100 de persoane, și luându-le în această ordine, să nu asignăm evenimentul cu 30 de persoane unei săli care ar permite accesul a 100+ persoane în cazul în care este o sală care permite între 30 și 100 de persoane, cel de al doilea eveniment rămănând astfel fără o sală căreia să fie atribuit.
-	- Am parcurs fiecare eveniment și încăpere, atribuindu-le după disponibilitate
-	[JavaDoc](https://github.com/Crekto/programare-avansata/tree/main/Lab2/Homework/JavaDoc)
+	- Am parcurs fiecare eveniment și încăpere, atribuindu-le după disponibilitate 
+	- 
+[JavaDoc](https://github.com/Crekto/programare-avansata/tree/main/Lab2/Homework/JavaDoc)
