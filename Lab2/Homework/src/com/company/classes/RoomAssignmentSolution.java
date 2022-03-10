@@ -35,7 +35,7 @@ public class RoomAssignmentSolution {
 
         for (Event event : problem.getEvents()) {
             for (Room room : problem.getRooms()) {
-                if (room.getCloesdTill() <= event.getStartTime()) {
+                if (room.getCloesdTill() <= event.getStartTime() && room.getCapacity() >= event.getSize()) {
                     room.setCloesdTill(event.getEndTime());
                     System.out.println(event.getName() + " -> " + room.getId());
                     break;
