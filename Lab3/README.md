@@ -31,7 +31,7 @@ Example: locations are: v1 (Computer A)  v2 (Router A) v3 (Switch A) v4 (Switch 
 </tr></tbody></table>
 </td>
 <td>
-<img src="network.png">
+<img src="https://profs.info.uaic.ro/~acf/java/labs/network.png">
 </td>
 </tr>
 </tbody></table>
