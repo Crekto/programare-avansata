@@ -1,6 +1,6 @@
 package com.company.classes;
 
-public class Switch extends Node{
+public class Switch extends Node {
 
     public Switch(String name, String macAddress, String location) {
         super(name, macAddress, location);
@@ -8,6 +8,6 @@ public class Switch extends Node{
 
     @Override
     public String toString() {
-        return super.toString();
+        return "Switch{" + "name='" + name + '\'' + ", macAddress='" + macAddress + '\'' + ", location='" + location + '\'' + "}\n";
     }
 }

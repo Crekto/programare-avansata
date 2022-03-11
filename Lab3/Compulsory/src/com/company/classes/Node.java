@@ -37,10 +37,6 @@ public abstract class Node {
 
     @Override
     public String toString() {
-        return "Node{" +
-                "name='" + name + '\'' +
-                ", macAddress='" + macAddress + '\'' +
-                ", location='" + location + '\'' +
-                "}\n";
+        return "Node{" + "name='" + name + '\'' + ", macAddress='" + macAddress + '\'' + ", location='" + location + '\'' + "}\n";
     }
 }

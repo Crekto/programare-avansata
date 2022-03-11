@@ -33,12 +33,6 @@ public class Computer extends Node implements Identifiable, Storage {
 
     @Override
     public String toString() {
-        return "Computer{" +
-                "ipAddress='" + ipAddress + '\'' +
-                ", storageCapacity=" + storageCapacity +
-                ", name='" + name + '\'' +
-                ", macAddress='" + macAddress + '\'' +
-                ", location='" + location + '\'' +
-                "}\n";
+        return "Computer{" + "ipAddress='" + ipAddress + '\'' + ", storageCapacity=" + storageCapacity + ", name='" + name + '\'' + ", macAddress='" + macAddress + '\'' + ", location='" + location + '\'' + "}\n";
     }
 }

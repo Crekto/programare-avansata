@@ -22,8 +22,16 @@ public class Network {
         this.nodes = nodes;
     }
 
-    public void addNode(Node node){
-        nodes.add(node);
+    public boolean alreadyContainsNode(Node obj) {
+        for (Node node : nodes)
+            if (obj.getName() == node.getName()) return true;
+        return false;
+    }
+
+    public void addNode(Node node) {
+        if (alreadyContainsNode(node)) {
+            System.err.println("The node with the name " + node.getName() + " is already added to the network");
+        } else nodes.add(node);
     }
 
     @Override
@@ -34,8 +42,6 @@ public class Network {
                 return o1.getName().compareTo(o2.getName());
             }
         });
-        return "Network{" +
-                "nodes=\n" + nodes +
-                "}\n";
+        return "Network{" + "nodes=\n" + nodes + "}\n";
     }
 }
