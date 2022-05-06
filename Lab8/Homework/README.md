@@ -17,4 +17,4 @@
 - Am afișat distanțele dintre anumite orașe.
 - Am creat o mapă 2D cu ajutorul proiectiei mercator.
 
-![alt text](https://github.com/Crekto/programare-avansata/tree/main/Lab8/Homework/ss.png)
+![screenshot](ss.png)
