@@ -25,13 +25,21 @@ public class Client {
                  Socket socket = new Socket(serverAddress, PORT);  PrintWriter out = new PrintWriter(socket.getOutputStream(), true);  BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
             // Send a request to the server
             Scanner requestIn = new Scanner(System.in);
-            System.out.println("Enter a command: ");
-            String request = requestIn.nextLine();
-            out.println(request);
-            // Wait the response from the server ("Hello World!")
-            String response = in.readLine();
-            System.out.println(response);
-        } catch (UnknownHostException e) {
+            while (true) {
+                String username = in.readLine();
+                System.out.println("[" + username + "] Enter a command: ");
+                String request = requestIn.nextLine();
+                out.println(request);
+                // Wait the response from the server ("Hello World!")
+                String response = in.readLine();
+                System.out.println(response);
+                if (request.equals("stop")) {
+                    break;
+                }
+
+            }
+
+        } catch (IOException e) {
             System.err.println("No server listening... " + e);
         }
     }

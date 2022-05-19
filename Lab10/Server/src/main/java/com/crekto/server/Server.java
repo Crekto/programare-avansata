@@ -8,6 +8,7 @@ import com.crekto.server.threads.ClientThread;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import utils.Database;
 
 /**
  *
@@ -30,11 +31,13 @@ public class Server {
     public Server() throws IOException {
 
         try {
+            Database db = new Database();
             serverSocket = new ServerSocket(PORT);
             while (running) {
                 System.out.println("Waiting for a client ...");
                 Socket socket = serverSocket.accept();
-                new ClientThread(socket, this).start();
+                socket.setSoTimeout(7000);
+                new ClientThread(socket, this, db).start();
             }
         } catch (IOException e) {
             System.err.println("Ooops... " + e);
