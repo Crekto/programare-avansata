@@ -10,7 +10,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -36,6 +38,17 @@ public class FriendshipDAO {
 
             }
             return friends;
+        }
+    }
+
+    public Map<String, Integer> getTop(String number) throws SQLException {
+        Connection con = Database.getConnection();
+        Map<String, Integer> top = new HashMap<>();
+        try ( Statement stmt = con.createStatement();  ResultSet rs = stmt.executeQuery("select friend1, count(*) from friendships group by friend1 order by count(*) desc limit " + number)) {
+            while (rs.next()) {
+                top.put(rs.getString(1), rs.getInt(2));
+            }
+            return top;
         }
     }
 

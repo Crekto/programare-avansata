@@ -7,6 +7,7 @@ package com.Crekto.Lab11.controllers;
 import com.Crekto.Lab11.dao.FriendshipDAO;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,6 +33,11 @@ public class FriendshipController {
     public List<String> addFriendship(@PathVariable String firstUser, @PathVariable String secondUser) throws SQLException {
         friendships.create(firstUser, secondUser);
         return friendships.getFriendship(firstUser);
+    }
+
+    @GetMapping("/top/{number}")
+    public Map<String, Integer> getTopFriendship(@PathVariable String number) throws SQLException {
+        return friendships.getTop(number);
     }
 
 }
